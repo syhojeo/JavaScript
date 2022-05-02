@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Jquery 라이브러리 지정 -->
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+// 	window.onload=function() {
+// 		var menu=document.getElementById("menu");
+// 		var liList=menu.getElementsByTagName("li");
+// 		//liList를 documet.write로 찍게되면 밑의 body의 li 내용이 출력되지 않는다
+// 		//document.write(liList);
+// 		console.log(liList);
+
+// 		for (var i = 0; i < liList.length; i++) {
+// 			// var li = liList[i];
+// 			// li.style.color="#f00";
+
+// 			liList[i].style.color="#f00";
+// 		}
+// 		//menu.style.color="#f00";
+// 	}
+	//jquery
+	//window.onload = function 쓰듯이 ready function() 을 사용해줘야 body 보다 먼저 자바스크립트가 읽혀도 적용가능하다
+	//DOM 이 javaScript 코드를 실행할 준비가 된 후에만 실행된다
+	//jqurey의 이벤트 메소드이다
+	$(document).ready(function() {
+		$("#menu li").css("color", "#f00");
+	});
+</script>
+</head>
+<body>
+	<ul id="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+	</ul>
+</body>
+</html>

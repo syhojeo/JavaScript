@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//동적으로 메뉴 항목을 추가하고 메뉴 항목 클릭 시 클릭한 메뉴 항목 출력
+	$(document).ready(function(){
+		var menu=$("ul.menu");
+		var count = 0;
+		//추가 버튼을 누른경우
+		$("#add").on("click", function(e){
+			count++;
+			var newItem=$("<li>new" + count + "</li>");
+			//newItem 을 누를경우 발생할 이벤트 설정
+			newItem.on("click", function(){
+				alert($(this).html());
+			});
+			menu.append(newItem);
+	});
+		
+// 		$("#add").click(function(){
+// 			var newItem=$("<li>new" + count + "</li>");
+// 			menu.append(newItem);
+// 			count++;
+// 			newItem.click(function(){
+// 				alert($(this).html());
+// 			});
+// 		});
+		
+		//클릭할 경우
+		$("ul li").on("click", function(e){
+			console.log("테스트 용=" + e.target.tagName);
+			alert($(this).html());
+		});
+	});
+</script>
+
+</head>
+<body>
+	<button id="add">추가</button>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+	</ul>
+</body>
+</html>

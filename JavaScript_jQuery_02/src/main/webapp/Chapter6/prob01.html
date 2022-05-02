@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+ /*     table, tr, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        td {
+            width: 100px;
+            height: 100px;
+        }*/
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        td {
+            padding: 10px 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>자동 테이블 만들기</h1>
+    <h5>반복문 사용, document.write()를 사용하여 출력</h5>
+    <button onclick = "makeTable()">테이블 생성</button>
+    <div id ="showTable"></div>
+    <script type="text/javascript">
+        function makeTable() {
+            var col = window.prompt("행을 입력하세요");
+            var row = window.prompt("열을 입력하세요");
+
+            let table = document.createElement("table");
+            document.getElementById("showTable").appendChild(table);
+
+            let tr = new Array(col);
+            let td = new Array(row);
+
+            for (var i = 0; i < col; i++) {
+                tr[i] = document.createElement('tr');
+                for (var j = 0; j < row; j++) {
+                    td[j] = document.createElement('td');
+                    td[j].innerHTML = "(" + j + ", " + i + ")";
+                    tr[i].appendChild(td[j]);
+                }
+                table.appendChild(tr[i]);
+            }
+
+            /*var x = window.prompt("행을 입력하세요");
+            var y = window.prompt("열을 입력하세요");
+            var num = 0;
+            document.write("<table border = 1");
+            for (var i = 0; i < x; i++) {
+                document.write("<tr>");
+                for (var j = 0; j < y; j++) {
+                    document.write("<td>" + num + "</td>");
+                    num++;
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>")*/
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 	var count = 0;
+	function addCount() {
+		count++;
+		
+		return count;
+	}
+	
+	Document.wirte("1.count=" + addCount(), "<br>"); //1
+	Document.wirte("1.count=" + addCount(), "<br>"); //1
+	Document.wirte("1.count=" + addCount(), "<br>"); //1 */
+	
+	//클로저 (Closure)
+	//1. 전역변수를 줄일수 있다
+	//2. 코드의 재사용률을 높인다
+	function createCounter() {
+		var count = 0;
+		function addCount() {
+			count++;
+			return count;
+		}
+		return addCount;
+	}
+	//counter라는 변수로 함수자체를 리턴 받음으로써 클로저가 적용된다
+	//때문에 counter는 addCount()와 묶이고 
+	//createCounter()가 종료되어도 count값은 사라지지 않는다
+	var counter = createCounter();
+	document.write("1.count=" + counter(),"<br>");
+	document.write("2.count=" + counter(),"<br>");
+	document.write("3.count=" + counter(),"<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

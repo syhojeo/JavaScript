@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		//문자열로 자바스크립트 명령 만들기
+		var str = "";
+		str += "<p>JavaScript & Node.js</p>";
+		str += "<img src='./images/logo.png'";
+		str += "width=170 height=67>";
+		
+		//이전 방법으로는 되지 않는다
+		//document.body.appendChild(imgNode);
+		
+		//document.body.innerHTML(str);
+		document.body.innerHTML = str;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

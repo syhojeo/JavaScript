@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var today = new Date();
+	var nowYear = today.getFullYear();
+	var theDate = new Date(nowYear, 11, 31); //2022.12.31
+	//1970/01/01 부터 현재까지의 시간을 초단위로 계산한 값
+	/* var diffDate1 = theDate.getTime();
+	//오늘 날짜 + 현재까지의 시간
+	var diffDate2 = today.getTime(); */
+	
+	var diffDate = theDate.getTime() - today.getTime();
+	//Math.ceil : 소수점 첫째자리에서 무조건 올림
+	//밀리초 단위기 때문에 1000을 곱한다
+	var result = Math.ceil(diffDate/(1000 * 60 * 60 * 24));
+	
+	document.write("<h1> 오늘부터 올해 연말까지 남은 날짜</h1>");
+	document.write("D-day:" + result + "일 남았습니다." , "<br>");
+	
+	document.write(nowYear, "<br>");
+	document.write("---------------------------");
+	document.write("<br>");
+	document.write(today.getTime()); //1970.1.1 부터 오늘까지 밀리초
+	document.write("<br>");
+	document.write(theDate.getTime()); //2022.12.31 까지
+	document.write("<br>");
+	document.write(diffDate); // 두시간의차
+	document.write("<br>");
+	document.write(result);// 두시간의 차를 미리초가 아닌 일단위로 나타낸것
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

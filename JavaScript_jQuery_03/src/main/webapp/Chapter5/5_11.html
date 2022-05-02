@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		font-size:16px;
+		font-family:"굴림";
+	}
+	
+	ul.menu{
+		padding:10px;
+		list-style: none;
+		border: 1px #000 solid;	
+	}
+	
+	ul.menu li{
+		border:1px #eeeeee solid;
+		margin: 10px;
+	}
+	
+	li.select{
+		background-color: #ccc;
+		color:#f00;
+		font-size:20px;
+	}
+	ul.menu li.border {
+		border:4px solid #f00;
+	}
+</style>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 클릭한 메뉴 항목에 "select" css속성과 "border" 속성을 적용
+	// addClass() : 다른 객체속성 적용하기
+	$(document).ready(function() {
+		// 메뉴 아이템에 클릭 이벤트 등록
+		$("ul.menu li").click(function() {
+			//addClass를 이용하여 현재 클릭한 객체에 "select 객체를 적용한다"
+			//다수의 객체를 적용할경우 띄어쓰기로 구분
+			$(this).addClass("select border");
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="test">실행</button>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li class="select">menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+	</ul>
+</body>
+</html>

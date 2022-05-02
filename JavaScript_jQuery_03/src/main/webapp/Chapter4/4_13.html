@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		font-size: 16pt;
+		font-family:"굴림";
+	}
+	div, p, ul, li {
+		border: 1px #eeeeee solid;
+		margin: 10px;
+	}
+	ul {
+		padding: 10px;
+	}
+	li.select {
+		background-color: #ccc;
+	}
+</style>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 체크 버튼을 클릭하면 ul.menu노드의 내부가 어떤 구조로 돼 있는지 문자열로 출력
+	// text() , html()
+	$(document).ready(function() {
+		$("#btnCheck").click(function() {
+// 			console.log($(".menu").text());
+			//html 구조로 출력
+			console.log($(".menu").html());
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btnCheck">체크</button>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li class="select">menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+		<li>menu6</li>
+	</ul>
+</body>
+</html>

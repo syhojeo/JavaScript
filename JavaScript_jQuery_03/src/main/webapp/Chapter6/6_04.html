@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//확인 버튼(#btn)을 클릭하면 "안녕하세요" 메시지 출력
+	//단, 이벤트 리스너는 오직 한번만 실행
+ 	$(document).ready(function(){
+// 		$("#btn").on("click", function(){
+// 			alert("안녕하세요.");
+// 			$("#btn").off();
+// 		});
+// 	});
+		//.one() 함수를 이용하여 위와 같은 기능을 구현할 수 있다
+		$("#btn").one("click", function(){
+			//preventDefault가 없기 때문에 네이버에 바로 들어가진다
+			alert("환영합니다.");
+		});
+		//e : 실행을 멈추는 대상
+		//preventDefault 실행을 멈춘다
+// 		$("#btn").one("click", function(e){
+// 			alert("환영합니다.");
+// 			e.preventDefault(); //중지 -> 네이버에 바로 들어가지지 않는다 
+									//-> 이후 한번더 누를경우 단순한 link역할로써 네이버로이동한다
+// 		});
+	});
+</script>
+</head>
+<body>
+	<a href="http://www.naver.com" id="btn">네이버로 이동</a>
+</body>
+</html>

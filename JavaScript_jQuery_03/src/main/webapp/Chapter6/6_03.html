@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//버튼객체의 on/off
+	//이벤트 제거버튼(#btnoff)을 누르면 더 이상 이벤트 리스너가 동작하지 않게
+	//확인 버튼(#btn)에 등록한 이벤트 제거
+	$(document).ready(function(){
+		//#btn에 클릭 이벤트 추가
+		$("#btn").on("click", function(){
+			alert("환영합니다");
+		});
+		//#btnoff에 클릭 이벤트 추가
+		$("#btnOff").click(function() {
+			//#btn에 등록된 클릭 이벤트 제거
+			$("#btn").off();
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn">확인</button>
+	<button id="btnOff">이벤트 제거</button>
+</body>
+</html>

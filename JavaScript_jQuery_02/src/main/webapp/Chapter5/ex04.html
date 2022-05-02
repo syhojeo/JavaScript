@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//window클래스의 필드값
+	str = "전역 변수";
+	var str2="전역 변수" //var 가 있어도 함수 밖에 있기 때문에 전역변수
+	
+	window.onload = function() {
+		//함수 안에 선언된 변수가 var가 없다면 전역 변수
+		var str = '지역 변수';
+		//str을 하면 지역변수가 우선됨
+		console.log(str); //지역 변수
+		//this를 사용할 경우 전역변수가 읽혀짐 (this = window)
+		console.log(this.str); //전역 변수
+		console.log(window.str); //전역변수
+		str3 = '난 누구?';
+		console.log(str3);//난누구
+		console.log(this.str3); //난누구
+		what="나의 정체는?"; //전역 변수
+		//var what='나의 정체는?'; //지역변수이므로 error
+		showWhat();
+		
+		local = '전역';//var가 없을 경우 전역
+		console.log(local);
+		local='전역2'
+		console.log(local); //최근것이 적용
+		
+		var local='지역';
+		console.log(local);
+		var local='지역2';
+		console.log(local);
+		
+		//let 을 사용한 변수 선언은 지역 변수가 되며 중복 선언을 허용하지 않는다
+		//에러가 뜨지 않으려면 위의 중복 선언된 local을 모두 주석 처리해야 사용 가능하다
+		let local = '지역'; //SyntaxError: Identifier 'local' has already been declared 
+		console.log(local);
+	}
+	
+	function showWhat() {
+		console.log(what);
+	}
+</script>
+
+<style type="text/css">
+	.area1 {
+		border: 1px solid black;
+		height: 150px;
+	}
+</style>
+</head>
+<body>
+	<h3>자료형</h3>
+	<p>자바스크립트에서는 자료형별로 변수 타입이 지정되지 않고
+	리터럴에 의해 자료형이 결정된다.</p>
+	<button onclick="testType()">자료형 테스트</button>
+	<br><br>
+	<div id = "area1" class="area1"></div>
+	<script type="text/javascript">
+		function testType() {
+			var name = "홍길동";
+			var age = 19;
+			var check = true;
+			var hobby = ["축구", "게임", "숙면"];
+			var user = {
+				name: '홍길동',
+				age: 20,
+				id: 'user01'
+			}
+
+
+			var testFunction = function testFunction(num1, num2) {
+				var sum = num1 + num2;
+				alert(sum);
+			}
+			var apple;
+			console.log(typeof (name) + ":" + name);
+			console.log(typeof (age) + ":" + age);
+			console.log(typeof (check) + ":" + check);
+			console.log(typeof (hobby) + ":" + hobby);
+			console.log(typeof (user) + ":" + user);
+			console.log(typeof (testFunction) + ":" + testFunction);
+			console.log(typeof (apple) + ":" + apple);
+
+			var area1 = document.getElementById("area1");
+
+			area1.innerHTML += "문자열 변수:" + name + "<br>";
+			area1.innerHTML += "숫자 변수:" + age + "<br>";
+			area1.innerHTML += "논리 변수:" + check + "<br>";
+			area1.innerHTML += "배열:" + hobby + "<br>";
+			area1.innerHTML += "객체:" + user + "<br>";
+			area1.innerHTML += "객체:" + user.name + "," + user.age + "," + user.id + "<br>";
+			area1.innerHTML += "함수:" + testFunction + "<br>";
+			area1.innerHTML += "정의되지 않은 변수:" + apple + "<br>";
+		}
+	</script>
+
+	<h3>동적 타입 테스트</h3>
+	<p>자바스크립트에서 변수는 타입이 지정되는 것이 아닌, 동적으로 타입이 결정된다.</p>
+	<button onclick="testDynamicType()">실행 확인</button>
+	<div id = "area2"></div>
+	<script type="text/javascript">
+		function testDynamicType() {
+			var area2 = document.getElementById("area2");
+
+			var testVariable = 123;
+			console.log(typeof(testVariable) + ":" + testVariable);
+			var testVariable = "안녕하세요";
+			console.log(typeof(testVariable) + ":" + testVariable);
+			var testVariable = [0, 1, 2, 3];
+			console.log(typeof(testVariable) + ":" + testVariable);
+		}
+	</script>
+</body>
+</html>

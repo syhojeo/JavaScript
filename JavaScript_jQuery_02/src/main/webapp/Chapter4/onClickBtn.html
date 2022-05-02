@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var sbmBtn=document.getElementById("sbmBtn");
+// 		function eventHandler() {
+// 			console.log("click submit button");
+// 		}
+// 		sbmBtn.addEventListener("click", eventHandler);
+		sbmBtn.onclick = function() {
+			if (document.getElementById("uID").value == "") {
+				alert("user id blank!!");
+			}
+			else if (document.getElementById("uPW").value == "") {
+				alert("user pw blank!!");
+			}
+			else{
+				alert("login ok!!");
+// 				document.getElementById("uId").submit();
+// 				document.getElementById("uPw").submit();
+				document.getElementById("loginForm").submit();
+			}
+		}
+		
+		resBtn.onclick = function() {
+			document.getElementById("uID").value = "";
+			document.getElementById("uPW").value ="";
+			alert("reset ok!!");
+		}
+	}
+</script>
+</head>
+<body>
+	<form id ="loginForm" action="result.jsp">
+		USER ID:<input id = "uID" type="text" name ="uID"> <br>
+		USER PW:<input id="uPW" type="password" name="uPW"> <br>
+		<input id="sbmBtn" type="button" value="SUBMIT"><br>
+		<input id="resBtn" type="button" value="RESET"> <br>
+	</form>
+</body>
+</html>

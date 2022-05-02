@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		font-size: 16pt;
+		font-family:"굴림";
+	}
+	div, p, ul, li {
+		border: 1px #eeeeee solid;
+		margin: 10px;
+	}
+	ul {
+		padding: 10px;
+	}
+	li.select {
+		background-color: #ccc;
+	}
+</style>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 클릭한 메뉴 아이템을 세번째 메뉴(menu3)의 이전 노드로 이동
+	// insertBefore, before
+	$(document).ready(function() {
+		var menu=$("ul.menu");
+		$("ul.menu li").click(function() {
+			//select을 눌렀을 경우 아무런 행동도 하지않고 함수 종료하기
+			if($(this).hasClass("select")==true)
+				return;
+// 			$(this).insertBefore(".select");
+//			$(this).insertAfter(".select");
+			$(".select").before(this);
+// 			$(".select").after(this);
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btnAdd">추가</button>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li class="select">menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+		<li>menu6</li>
+	</ul>
+</body>
+</html>

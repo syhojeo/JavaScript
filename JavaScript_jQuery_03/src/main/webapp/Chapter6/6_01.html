@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//확인 버튼을 누르면 "안녕하세요" 메세지를 출력
+//  	$(document).ready(function(){
+// 		$("#btn").click(function() {
+//  			alert("안녕하세요");
+// 		});
+// 	});
+	//onclick(function)의 새로운 방법
+	$(document).ready(function(){
+		$("#btn").on("click", function(){
+			alert("안녕하세요");
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn">확인</button>
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//window.onload 사용하여 자바스크립트 작성
+	window.onload = function() {
+		var elementNode = document.createElement("hello");
+		var textNode = document.createTextNode("javascript!!");
+		
+		elementNode.appendChild(textNode);
+		var a = document.getElementById("hello");
+		a.style.color = "red";
+	}
+</script>
+</head>
+<body>
+	<p id = "hello"> Hello JavaScript</p>
+</body>
+</html>

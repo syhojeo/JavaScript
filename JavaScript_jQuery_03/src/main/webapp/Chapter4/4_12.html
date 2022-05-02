@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		font-size: 16pt;
+		font-family:"굴림";
+	}
+	div, p, ul, li {
+		border: 1px #eeeeee solid;
+		margin: 10px;
+	}
+	ul {
+		padding: 10px;
+	}
+	li.select {
+		background-color: #ccc;
+	}
+</style>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 삭제 버튼을 클릭하면 전체 자식 노드를 삭제
+	$(document).ready(function() {
+		$("#btnDel").click(function() {
+			$("ul.menu").children().remove();
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btnDel">삭제</button>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li class="select">menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+		<li>menu6</li>
+	</ul>
+</body>
+</html>

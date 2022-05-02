@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//클릭한 메뉴 항목 출력
+// 	$(document).ready(function(){
+// 		$("ul").on("click", function(e){
+// 			console.log("테스트 용=" + e.target.tagName);
+// 			if(e.target.tagName == "LI"){
+// 				alert($(e.target).html());
+// 			}
+// 		});
+// 	});
+	
+	//on("click", "li") 위의 코드와 결과 같음
+	$(document).ready(function(){
+		//click 한 객체가 li일 경우에만 함수 실행
+		$("ul").on("click", "li", function(e){
+			console.log("테스트 용=" + e.target.tagName);
+			alert($(e.target).html());
+		});
+	});
+</script>
+
+</head>
+<body>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+	</ul>
+</body>
+</html>

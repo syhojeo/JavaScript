@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var greenArr = ["교대", "방배", "강남"];
+	var yellowArr = ["미금", "정자", "수서"];
+	
+ 	//greenArr.splice(2, 1); //교대, 방배 (2,1) = 두번째 위치에서 하나를 짜른다
+ 	//2번 인덱스 부터 1개의 데이터를 삭제, 그리고 추가
+ 	greenArr.splice(2, 1, "서초", "역삼");
+	console.log(greenArr);
+	
+	var data1 = yellowArr.pop(); //마지막 인덱스 뽑기
+	console.log(data1); //수서
+	console.log(yellowArr); //수서가 뽑혀있음
+	console.log(yellowArr.length); //2
+	
+	var data2 = yellowArr.shift(); //첫번째 인덱스 pop과 정반대
+	console.log(data2); //미금
+	console.log(yellowArr); // "정자"
+	console.log(yellowArr.length); //1
+	
+	yellowArr.unshift(data1); //data1 = 수서 수서를 넣음
+	console.log(yellowArr); // "수서", "정자"
+	console.log(yellowArr.length); // 2
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

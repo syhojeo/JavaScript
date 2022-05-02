@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//동적으로 메뉴 항목을 추가하고 메뉴 항목 클릭 시 클릭한 메뉴 항목 출력
+	$(document).ready(function() {
+		$("#btnA").on("click", function(){
+			//trigger("click"): click 이벤트를 발생 시킨다
+			$("#btnB").trigger("click");
+		});
+		$("#btnB").on("click", function(){
+			console.log("버튼 B가 눌렸습니다.");
+		});
+	});
+</script>
+
+</head>
+<body>
+	<button id="btnA">버튼A</button>
+	<button id="btnB">버튼B</button>
+	<ul class="menu">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+	</ul>
+	
+	
+</body>
+</html>

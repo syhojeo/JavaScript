@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function sample() {
+		var sum = 0;
+		var count = 0;
+		while(true) {
+			var value = Number(window.prompt("수 입력", 1));
+			if (value == 0) {
+				document.write("종료합니다.", "<br>");
+				break;
+			}
+			sum += value;
+			count++;
+			document.write(count + "." + sum + "<br>");
+		}
+		document.write("총" + count + "번 실행했습니다.");
+	}
+	
+	sample();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#mouseEvent {
+		width: 200px;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		font-size: 1.2em;
+		background-color: #0f0;
+		color: #fff;
+		font-weight: bolder;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function() {
+		var me = document.getElementById("mouseEvent");
+		me.addEventListener("click", function(){console.log("click event!!");});
+		me.addEventListener("mouseover", function(){console.log("mouseover event!!");});
+		me.addEventListener("mouseout", function(){console.log("mouseout event!!");});
+		me.addEventListener("mousemove", function(){console.log("mousemove event!!");});
+		me.addEventListener("mousedown", function(){console.log("mousedown event!!");});
+		me.addEventListener("mouseup", function(){console.log("mouseup event!!");});
+		me.addEventListener("dblclick", function(){console.log("dblclick event!!");});
+	}
+</script>
+</head>
+<body>
+	<div id = "mouseEvent">mouse event</div>
+</body>
+</html>

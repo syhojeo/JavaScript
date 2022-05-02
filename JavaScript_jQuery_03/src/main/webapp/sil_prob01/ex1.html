@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		font-size: 16px;
+		font-family: "굴림";
+	}
+	ul.menu{
+		padding: 10px;
+		list-style: none;
+		border: 1px #000 solid;
+	}
+	ul.menu li{
+		border: 1px #eeeeee solid;
+		margin: 10px;
+	}
+	
+/* 	클릭 했을때 li에 css설정해주기 */
+	li.select{
+		background-color: #ccc;
+	}
+</style>
+<script type="text/javascript" src="../libs/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//$로 변수 선언해주는것과 그냥 변수 선언해주는것은 아예다른 변수명으로 선언되며
+	//$를 붙여 변수를 선언해주는 것은 jquery 객체 변수로 사용하겠다는 뜻이다
+	//input 의 text value값
+	var $inputText = null;
+	//menu 객체
+	var $menu = null;
+	//클릭한 아이템 객체
+	var $selectedItem = null;
+	
+	
+	$(document).ready(function() {
+		init();
+		initEvent();
+	});
+	
+	function init(){
+		//전역 변수들 초기화 해주기
+		//selectedItem: input text 값을 읽어와 저장하기
+		$inputText = $("#menuName");
+	
+		//menu 객체 설정
+		$menu = $("ul.menu");
+	}
+	
+	//버튼을 눌렀을때 발생하는 이벤트 설정
+	function initEvent(){
+		//input 박스에 입력한 값을 읽어오기
+		
+		//추가 키를 눌렀을때
+		$("#add").click(function(){
+			//input에 입력한 text값을 ul.menu에 추가하기
+			var $newItem = $("<li>" + $inputText.val() + "</li>");
+			$menu.append($newItem);
+		});
+		
+		//li를 눌렀을때 발생하는 이벤트
+		$("ul.menu").on("click", "li", function(){
+			//selectedItem 이 존재한다면(이미선택되었다면) 기존의 select 클래스를 삭제하기
+			//비교할경우 $변수였다면 반드시 $를 붙여줘야만 선언된 변수라고 인식한다 (안붙여주면 not define 에러)
+			if($selectedItem != null){
+				$selectedItem.removeClass("select");
+			}
+			//selectedItem에 select클래스 추가하기
+			$selectedItem = $(this);
+			$selectedItem.addClass("select");
+		});
+		
+		//선택된 아이템을 수정하기
+		$("#update").click(function(){
+			$selectedItem.html($inputText.val());
+		});
+		
+		//선택된 아이템을 삭제하기
+		$("#remove").click(function() {
+			$selectedItem.remove();
+		});
+
+		//선택된 아이템을 한칸 위로 이동시키기
+		$("#up").click(function(){
+			var $selectedItemBefore = $selectedItem.prev();
+			$selectedItem.insertBefore($selectedItemBefore);
+		});
+		
+		//선택된 아이템을 한칸 밑으로 이동시키기
+		$("#down").click(function() {
+			var $selectedItemAfter = $selectedItem.next();
+			$selectedItem.insertAfter($selectedItemAfter);
+		});
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="menuName">
+	<button id="add">추가</button>
+	<button id="update">수정</button>
+	<button id="remove">삭제</button>
+	<button id="up">UP</button>
+	<button id="down">DOWN</button>
+	
+	<div>
+		<ul class="menu">
+			
+		</ul>
+	</div>
+</body>
+</html>

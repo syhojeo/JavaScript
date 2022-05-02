@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//		 01234567890123456789012345678901
+	var t = "Hello Thank you good luck to you";
+	
+	document.write(t.charAt(16), "<br>"); //16번째 인덱스 g
+	document.write(t.indexOf("you"), "<br>"); //"you" 가 시작되는 인덱스 12
+	document.write(t.indexOf("you", 16), "<br>");// 16인덱스 이후 "you"로 시작하는 인덱스 29
+	document.write(t.lastIndexOf("you"), "<br>");//"you"를 뒤에서부터 찾았을때 인덱스 29
+	document.write(t.lastIndexOf("you", 25), "<br>");//"you"뒤의 25번째 인덱스부터 찾았을때 12
+	document.write(t.match("luck"), "<br>");//"luck"과 매칭될때 "luck" 그대로 리턴 luck
+	document.write(t.search("you"), "<br>");// "you"가 있을때 인덱스 리턴 12
+	document.write(t.substr(21, 4), "<br>");//21번째 인덱스 부터 4글자 luck
+	document.write(t.substring(6, 12), "<br>");// 6이상 12미만 인덱스 Thank 
+	document.write(t.replace("you", "me"), "<br>"); //"you"를 "me"로 한번만 대체
+	document.write(t.toLowerCase(), "<br>"); //대문자를 모두 소문자로
+	document.write(t.toUpperCase(), "<br>");//소문자를 모두 대문자로
+	document.write(t.length, "<br>"); // 문자열의 길이
+</script>
+</head>
+<body>
+
+</body>
+</html>

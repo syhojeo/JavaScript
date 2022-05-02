@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+		#cEvent{
+		width:200px;
+		height:100px;
+		text-align: 1.2em;
+		background-color: #f00;
+		color:#fff;
+		font-weight: border;
+	}
+</style>
+<script type="text/javascript">
+	//body에서 onclikc을 설정한거싱 아니기 때문에 window.onload를 통해 
+	//브라우저가 돌아갈때에도 javascript가 실행되도록 해야한다
+// 	window.onload=function() {
+// 		//id를 읽어와 노드를 만들기
+// 		var ce = document.getElementById("cEvent");
+// 		//해당 노드의 onclick 설정하기
+// 		ce.onclick = function() {
+// 			console.log("click!");
+// 		}
+// 	}
+	
+	//익명 함수가 아닌 함수 만들어서 사용하기
+	window.onload = function() {
+		var ce = document.getElementById("cEvent");
+		ce.onclick = clickEventHander;
+		function clickEventHander() {
+			console.log("clickEventHander");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="cEvent">click event</div>
+</body>
+</html>

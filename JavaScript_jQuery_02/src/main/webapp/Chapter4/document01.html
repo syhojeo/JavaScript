@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//https://cocobi.tistory.com/60 (노드관계 분석도)
+	//window 객체는 브라우저를 제어하는데 있어 가장 상위 객체이다
+	//onload 브라우저가 실행되면서 함수내용을 자동으로 연결
+	window.onload = function () {
+		//node :<hr>, <br> 같은애들
+		//document: node를 관리해주는 애들
+		var elementNode = document.createElement("p");
+		var textNode = document.createTextNode("JavaScript & node.js");
+		
+		elementNode.appendChild(textNode); //<p>JavaScript & node.js</p>
+		//textnode -> elementnode -> bodynode
+		document.body.appendChild(elementNode);
+	}
+</script>
+</head>
+<body>
+	<p></p>
+</body>
+</html>

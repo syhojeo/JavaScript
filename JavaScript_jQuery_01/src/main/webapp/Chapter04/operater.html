@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+	//할당 연산자
+	var varTemp1 = 100;
+	var varTemp2 = 200;
+	var varTemp3 = varTemp1 + varTemp2;
+	console.log("varTemp3:" + varTemp3);
+	
+	varTemp2 = 1000;
+	varTemp3 = varTemp1 + varTemp2;
+	console.log("varTemp3:" + varTemp3);
+	
+	// 사칙 연산자 및 나머지 연산자
+	var varFirstNum = 10;
+	var varSecondNum = 4;
+	var varResult = 0 ;
+	
+	//덧셈
+	varResult = varFirstNum + varSecondNum;
+	console.log("varResult:" + varResult)
+	//뺄셈
+	varResult = varFirstNum - varSecondNum;
+	console.log("varResult:" + varResult);
+	//곱셈
+	varResult = varFirstNum * varSecondNum;
+	console.log("varResult:" + varResult);
+	//나눗셈
+	varResult = varFirstNum / varSecondNum;
+	console.log("varResult:" + varResult);
+	//나머지
+	varResult = varFirstNum % varSecondNum;
+	console.log("varResult:" + varResult);
+	
+	//자동 증감 연산자
+	var varIncrease = 10;
+	var varDecrease = 10;
+	
+	varIncrease=++varIncrease;
+	varDecrease=--varDecrease;
+	
+	console.log("varIncrease:" + varIncrease);
+	console.log("varDecrease:" + varDecrease);
+	
+	varIncrease= varIncrease++;
+	varDecrease = varDecrease--;
+	
+	console.log("varIncrease:" + varIncrease);
+	console.log("varDecrease:" + varDecrease);
+	
+	// 비교 연산자
+	var varNum = 10;
+	console.log(varNum > 11);
+	console.log(varNum < 11);
+	console.log(varNum >= 11);
+	console.log(varNum <= 11);
+	console.log(varNum == 11);
+	console.log(varNum != 11);
+	
+	//논리 연산자
+	var varLogic1 = true;
+	var varLogic2 = false;
+	console.log(varLogic1 && varLogic2);
+	console.log(varLogic1 || varLogic2);
+	
+	varLogic1 = true;
+	varLogic2 = true;
+	console.log(varLogic1 && varLogic2);
+	console.log(varLogic1 || varLogic2);
+	
+	varLogic1 = false;
+	varLogic2 = false;
+	console.log(varLogic1 && varLogic2);
+	console.log(varLogic1 || varLogic2);
+	
+	// 부정 연산자
+	var varTrue = true;
+	console.log("varTrue:" + varTrue);
+	console.log("!varTrue:" + varTrue);
+	
+	//복합 대입 연산자
+	var varComplex = 100;
+	varComplex += 3;
+	console.log("varComplex:" + varComplex);
+	varComplex -= 3;
+	console.log("varComplex:" + varComplex);
+	varComplex *= 3;
+	console.log("varComplex:" + varComplex);
+	varComplex /= 3;
+	console.log("varComplex:" + varComplex);
+	varComplex %= 3;
+	console.log("varComplex:" + varComplex);
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+	// 배열 메서드
+	//indexOf() 검색 
+	var varArrIndex = new Array(123, "ABC", "가나다", "abc", "가나다", "123");
+	//indexOf (앞에서 부터 검색)
+	console.log("varArrIndex.indexOf(\"가나다\"):" + varArrIndex.indexOf("가나다")); //2
+	//lastIndexOf (뒤에서부터 검색)
+	console.log("varArrIndex.lastIndexOf(\"가나다\"):" + varArrIndex.lastIndexOf("가나다"));//4
+	console.log("varArrIndex.indexOf(\"123\"):" + varArrIndex.indexOf(123)); // 0
+	console.log("varArrIndex.lastindexOf(\"123\"):" + varArrIndex.lastIndexOf("123")); // 5
+	//배열 내에 없는 경우
+	console.log("varArrIndex.indexOf(\"XYZ\"):" + varArrIndex.indexOf("XYZ")); //-1
+	
+	// concat(): 두 문자열 연결
+	var varArrFir = new Array("ABC", "DEF", "GHI", "JKL");
+	var varArrSec = new Array("가나다", "라마바", "사아차", "카파타");
+	var varArrRes = varArrFir.concat(varArrSec);
+	console.log("varArrFir:" + varArrFir);
+	console.log("varArrSec:" + varArrSec);
+	console.log("varArrRes:" + varArrRes);
+	
+	//join(): 결합
+	var varArrJoin = new Array("AB", "CD", "EF", "HI");
+	console.log("varArrJoin:" + varArrJoin.join());
+	console.log("varArrJoin:" + varArrJoin.join("|"));
+	console.log("varArrJoin:" + varArrJoin.join(":"));
+	console.log("varArrJoin:" + varArrJoin.toString());
+	
+	//sort(): 정렬
+	var varArrSort = new Array("E", "B", "A", "C", "D");
+	console.log("varrArrSortBefore:" + varArrSort);
+	console.log("varARrSort:" + varArrSort.sort());
+	console.log("varArrSortAfter:" + varArrSort);
+	
+	//push(): 추가
+	var varArrPush = new Array("ABC", "DEF");
+	console.log("varArrPush:" + varArrPush.push("가나다", "마바사"));
+	console.log("varArrPush:" + varArrPush);
+	
+	//shift(), pop()
+	var varArrShiftPop = new Array("가", "나", "다", "라", "마");
+	//shift() : 앞에서 부터 값을 뽑아낸다
+	console.log("varArrShiftPop.shift():" + varArrShiftPop.shift()); //가
+	console.log("varArrShiftPop.shift():" + varArrShiftPop.shift()); //나
+	console.log("varArrShiftPop:" + varArrShiftPop); // 다 라 마
+	console.log("varArrShiftPop.length():" + varArrShiftPop.length); // 3
+	
+	//pop(): 뒤에서부터 값을 뽑아낸다
+	console.log("varArrShiftPop.pop():" + varArrShiftPop.pop()); // 마
+	console.log("varArrShiftPop.pop():" + varArrShiftPop.pop()); // 라
+	console.log("varArrShiftPop:" + varArrShiftPop); //다
+	console.log("varArrShiftPop.length:" + varArrShiftPop.length); //1
+	
+	varArrShiftPop.unshift("가");
+	console.log("varArrShiftPopori:" + varArrShiftPop); //가 다
+	console.log("varArrShiftPopori:" + varArrShiftPop.length); //2
+	varArrShiftPop[varArrShiftPop.length] = "마";
+	//pop() , push(): 뒤에서부터 값을 넣거나 뺀다 
+	// shift(), unshift() : 앞에서부터 값을 넣거나 뺀다
+ 	varArrShiftPop.push("라");
+	console.log("varArrShiftPopori:" + varArrShiftPop);
+</script>
+</head>
+<body>
+
+</body>
+</html>

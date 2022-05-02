@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//변수의 선언, 초기화, 할당
+	var variableName = 1; //선언
+	variableName1 = 100; //할당
+	alert("variableName1:" + variableName1); 
+	
+	var variableName2 = 200; //선언 및 초기화
+	variableName2 = 300;
+	alert("variableName2:" + variableName2);
+	
+	/* 
+		변수에는 모든 자료형을 담을 수 있다. 
+		자료형: 문자, 숫자, 불리언, 함수 객체, undefined 
+		(특별한 변수 type이 없다는게 javascript의 특징)
+	*/
+	var varStr="ABCDEF";
+	console.log("varStr:" + varStr);
+	var varNum=123456;
+	console.log("varNum:" + varNum);
+	var varBoo=false;
+	console.log("varBoo:" + varBoo);
+	var varFun=function fun() {
+		
+	}
+	console.log("varFun:" + varFun);
+	var varObj={};
+	console.log("varObj:" + varObj);
+	var varUnd=undefined;
+	console.log("varUnd:" + varUnd);
+	
+	//undefined: 선언만하고 초기화(할당)하지 않은 변수값
+	var varUndefined;
+	console.log("varUndefined:" + varUndefined);
+	varUndefined=1;
+	console.log("varUndefined:" + varUndefined);
+	
+	// javascript 에서는 변수에 담긴 자료형을 변경할 수 있다.
+	var varTemp;
+	varTemp = "ABCDEF";
+	console.log("varTemp:" + varTemp);
+	console.log("varTemp:"+typeof(varTemp)); //String
+	
+	varTemp=123456;
+	console.log("varTemp:" + varTemp);
+	console.log("varTemp:" + typeof(varTemp)); //number
+	
+	varTemp=true;
+	console.log("varTemp:" + varTemp);
+	console.log("varTemp:" + typeof(varTemp)); //boolean
+	
+	varTemp=function(){};
+	console.log("varTemp:" + varTemp);
+	console.log("varTemp:" + typeof(varTemp)); //function
+	
+	varTemp={};
+	console.log("varTemp:" + varTemp);
+	console.log("varTemp" + typeof(varTemp)); //object
+	
+	varTemp=undefined;
+	console.log("varTemp:" + varTemp);
+	console.log("varTemp" + typeof(varTemp)); //undefined
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

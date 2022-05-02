@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//window.onload 를 사용하지 않을때
+	var a = document.getElementById("hello");
+	a.style.color = "red";
+</script>
+</head>
+<body>
+	<!-- 
+		 빨간색이 적용되지 않는다 
+		 id hello가 선언되지도 않았는데 javascript에서 hello를 사용했기 때문에
+		 기본적으로 html은 맨위부터 순서대로 진행되며 id hello를 모르기 때문에
+		 자바 스크립트문은 유효하지 않게된 것이다
+		 
+		 때문에 javascript문에 window.onload를 사용하여 자바스크립트 문서가 준비된 상황 이후에 발동하도록 해줘서
+		 css나 html의 값을 javascript에서 적용할 수 있도록 만들어 준다
+	 -->
+	<p id = "hello"> Hello JavaScript</p>
+</body>
+</html>
